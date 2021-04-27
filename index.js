@@ -15,7 +15,7 @@ client.once("ready", () => {
 client.on("message", (message) => {
   let cardNumber = 0;
   let upOrDown = 0;
-  if (message.content === "t!draw") {
+  if (message.content === "tarot!draw") {
     cardNumber = Math.floor(Math.random() * 77);
     upOrDown = Math.floor(Math.random() * 2);
     if (upOrDown === 0) {
@@ -33,7 +33,7 @@ client.on("message", (message) => {
           data.cards[cardNumber].meaning_rev
       );
     }
-  } else if (message.content === "t!spread") {
+  } else if (message.content === "tarot!spread") {
     const spreadLabels = [
       "**__Past:__** \n",
       "**__Present:__** \n",
@@ -66,9 +66,9 @@ client.on("message", (message) => {
       }
     }
     message.channel.send(spreadResults);
-  } else if (message.content === "t!help") {
+  } else if (message.content === "tarot!help") {
     message.channel.send(
-        "__**Commands List**__\nt!draw: Draw one Tarot card; includes orientation and description.\nt!spread: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
+        "__**Commands List**__\ntarot!draw: Draw one Tarot card; includes orientation and description.\ntarot!spread: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
       );
   }
 });
