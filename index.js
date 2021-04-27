@@ -42,9 +42,9 @@ client.on("message", (message) => {
       "**__Possible Outcome:__** \n",
     ];
     let spreadResults = [];
-    let counter = 0;
     // for (let i = 0; i < 5; i++) {
-    while ( counter < 4 ) {
+    let counter = 0;
+    while (counter < 4) {
       cardNumber = Math.floor(Math.random() * 77);
       upOrDown = Math.floor(Math.random() * 2);
       let cardNumberArray = [];
@@ -52,7 +52,7 @@ client.on("message", (message) => {
         continue;
       } else if (upOrDown === 0) {
         spreadResults.push(
-          spreadLabels[i] +
+          spreadLabels[counter] +
             "**" +
             data.cards[cardNumber].name +
             "**, Upright🔺\n" +
@@ -62,7 +62,7 @@ client.on("message", (message) => {
         counter++;
       } else {
         spreadResults.push(
-          spreadLabels[i] +
+          spreadLabels[counter] +
             "**" +
             data.cards[cardNumber].name +
             "**, Reverse🔻\n" +
@@ -75,8 +75,8 @@ client.on("message", (message) => {
     message.channel.send(spreadResults);
   } else if (message.content === "tarot!help") {
     message.channel.send(
-        "__**Commands List**__\ntarot!draw: Draw one Tarot card; includes orientation and description.\ntarot!spread: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
-      );
+      "__**Commands List**__\ntarot!draw: Draw one Tarot card; includes orientation and description.\ntarot!spread: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
+    );
   }
 });
 
