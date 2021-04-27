@@ -42,10 +42,15 @@ client.on("message", (message) => {
       "**__Possible Outcome:__** \n",
     ];
     let spreadResults = [];
-    for (let i = 0; i < 5; i++) {
+    let counter = 0;
+    // for (let i = 0; i < 5; i++) {
+    while ( counter < 4 ) {
       cardNumber = Math.floor(Math.random() * 77);
       upOrDown = Math.floor(Math.random() * 2);
-      if (upOrDown === 0) {
+      let cardNumberArray = [];
+      if (cardNumberArray.includes(cardNumber)) {
+        continue;
+      } else if (upOrDown === 0) {
         spreadResults.push(
           spreadLabels[i] +
             "**" +
@@ -54,6 +59,7 @@ client.on("message", (message) => {
             data.cards[cardNumber].meaning_up +
             "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
         );
+        counter++;
       } else {
         spreadResults.push(
           spreadLabels[i] +
@@ -63,6 +69,7 @@ client.on("message", (message) => {
             data.cards[cardNumber].meaning_rev +
             "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
         );
+        counter++;
       }
     }
     message.channel.send(spreadResults);
