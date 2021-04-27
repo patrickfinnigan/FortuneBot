@@ -44,7 +44,7 @@ client.on("message", (message) => {
     let spreadResults = [];
     // for (let i = 0; i < 5; i++) {
     let counter = 0;
-    while (counter < 4) {
+    while (counter < 5) {
       cardNumber = Math.floor(Math.random() * 77);
       upOrDown = Math.floor(Math.random() * 2);
       let cardNumberArray = [];
