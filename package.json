@@ -1,0 +1,23 @@
+{
+  "name": "fortunebot",
+  "version": "1.0.0",
+  "description": "A Tarot bot that draws and describes any number of Tarot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickfinnigan/FortuneBot.git"
+  },
+  "author": "thebreezyp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickfinnigan/FortuneBot/issues"
+  },
+  "homepage": "https://github.com/patrickfinnigan/FortuneBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0"
+  }
+}
