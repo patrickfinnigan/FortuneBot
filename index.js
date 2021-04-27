@@ -15,9 +15,7 @@ client.once("ready", () => {
 client.on("message", (message) => {
   let cardNumber = 0;
   let upOrDown = 0;
-  if (message.content === "t!red") {
-    message.channel.send("Blue.");
-  } else if (message.content === "t!card") {
+  if (message.content === "t!draw") {
     cardNumber = Math.floor(Math.random() * 77);
     upOrDown = Math.floor(Math.random() * 2);
     if (upOrDown === 0) {
@@ -68,6 +66,10 @@ client.on("message", (message) => {
       }
     }
     message.channel.send(spreadResults);
+  } else if (message.content === "t!help") {
+    message.channel.send(
+        "__**Commands List**__\n__t!draw__: Draw one Tarot card; includes orientation and description.\n__t!spread__: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
+      );
   }
 });
 
