@@ -68,7 +68,7 @@ client.on("message", (message) => {
     message.channel.send(spreadResults);
   } else if (message.content === "t!help") {
     message.channel.send(
-        "__**Commands List**__\n__t!draw__: Draw one Tarot card; includes orientation and description.\n__t!spread__: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
+        "__**Commands List**__\nt!draw: Draw one Tarot card; includes orientation and description.\nt!spread: Draws five cards in a simple spread: Past, Present, Hidden Influences, Advice, and Possible Outcomes."
       );
   }
 });
